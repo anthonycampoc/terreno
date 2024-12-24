@@ -16,33 +16,35 @@ Sigue estos pasos para configurar el proyecto en tu máquina local.
 
 Clona el repositorio en tu máquina local usando el siguiente comando:
 
-```sh
+
 git clone <URL_DEL_REPOSITORIO>
 
-2. Instalar dependencias de Node.js
+### 2. Instalar dependencias de Node.js
 Navega a la carpeta del proyecto y ejecuta el siguiente comando para instalar las dependencias de Node.js:
 
-sh
 npm install
-3. Actualizar dependencias de Composer
+
+### 3. Actualizar dependencias de Composer
 Ejecuta el siguiente comando para actualizar las dependencias de Composer:
 
-sh
 composer update
-4. Configuración de la Base de Datos
+
+### 4. Configuración de la Base de Datos
 Asegúrate de que el nombre de la base de datos esté configurado correctamente en el archivo .env. Abre el archivo y verifica la siguiente línea:
 
 env
 DB_DATABASE=nombre_de_tu_base_de_datos
-5. Ejecutar Migraciones
+
+### 5. Ejecutar Migraciones
 Finalmente, ejecuta las migraciones para configurar las tablas de la base de datos:
 
-sh
-php artisan migrate
-¡Listo! Ahora deberías tener el proyecto configurado y listo para usar.
 
-Contribuciones
+php artisan migrate
+
+# ¡Listo! Ahora deberías tener el proyecto configurado y listo para usar.
+
+### Contribuciones
 Si deseas contribuir a este proyecto, por favor, haz un fork del repositorio y crea una pull request con tus cambios.
 
-Licencia
+### Licencia
 Este proyecto está licenciado bajo la licencia MIT. Consulta el archivo LICENSE para más detalles.
