@@ -20,6 +20,7 @@ class CreateServicesTable extends Migration
             $table->string('image');
             $table->string('contact');
             $table->text('link');
+            $table->enum('status',['activo','desactivo'])->default('activo');
             $table->timestamps();
         });
     }

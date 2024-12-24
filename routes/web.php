@@ -25,8 +25,13 @@ Route::get('admin', [PanelController::class, 'index']);
 
 //Rutas Servicios
 Route::get('/servicios', [ServicioController::class, 'index']);
+Route::get('/serviciosD', [ServicioController::class, 'desactivo']);
 Route::get('/createService', [ServicioController::class, 'create']);
 Route::post('/storeService', [ServicioController::class, 'store']);
+Route::get('/editService/{id}', [ServicioController::class, 'edit']);
+Route::put('/updateService/{id}', [ServicioController::class, 'update']);
+Route::get('/statuService/{id}', [ServicioController::class, 'status']);
+
 //Ruta Mision y Vision
 
 Route::get('/MisVis',[MisVisController::class, 'index']);
