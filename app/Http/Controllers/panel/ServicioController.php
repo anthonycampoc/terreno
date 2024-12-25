@@ -13,11 +13,6 @@ class ServicioController extends Controller
         return view('admin.servicios.index', compact('servicios'));
     }
 
-    public function desactivo(){
-        $servicios = Service::where('status','desactivo')->get();
-        return view('admin.servicios.indexD', compact('servicios'));
-    }
-
     public function create(){
         return view('admin.servicios.create');
     }
@@ -88,5 +83,11 @@ class ServicioController extends Controller
         }
 
         return redirect()->to('/servicios');
+    }
+
+    public function desactivo(){
+        
+        $servicios = Service::where('status','desactivo')->get();
+        return view('admin.servicios.indexD', compact('servicios'));
     }
 }

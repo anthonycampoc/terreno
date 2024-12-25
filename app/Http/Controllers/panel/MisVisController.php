@@ -12,7 +12,6 @@ class MisVisController extends Controller
     }
 
     public function edit(){
-        
         return view('Admin.MisVis.edit');
     }
 }
