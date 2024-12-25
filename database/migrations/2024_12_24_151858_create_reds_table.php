@@ -15,9 +15,10 @@ class CreateRedsTable extends Migration
     {
         Schema::create('reds', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('icon');
-            $table->text('link');
+            $table->string('title');//nombre
+            $table->string('icon');//icono 
+            $table->text('link');//link red social
+            $table->enum('status',['activo','desactivo'])->default('activo'); 
             $table->timestamps();
         });
     }

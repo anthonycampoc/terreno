@@ -10,6 +10,6 @@ class Red extends Model
     use HasFactory;
 
     protected $fillable = [
-            'title','icon','link'
+            'title','icon','link','status'
     ];
 }
