@@ -26,6 +26,7 @@ class RedesController extends Controller
     public function store(Request $request){
 
         //dd( Red::create($request->all()));
+
         Red::create($request->all());
         return redirect()->to('/redes');
     }
@@ -57,8 +58,6 @@ class RedesController extends Controller
 
     public function status($id){
         $estado = Red::find($id);
-
-
         if($estado->status == 'activo'){
             
            Red::where('id', $id)->update(['status'=> 'desactivo']);

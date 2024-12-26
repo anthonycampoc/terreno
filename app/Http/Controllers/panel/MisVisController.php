@@ -15,13 +15,9 @@ class MisVisController extends Controller
     public function create(){
         return view('Admin.MisVis.create2');
     }
-
-
-
-
     public function store(Request $request){
 
-        $MisVis = $request->all();//almancena los datos que se mandan desde el fomulario html
+       $MisVis = $request->all();//almancena los datos que se mandan desde el fomulario html
         
         if($imagen = $request->file('image')){
             $ruta = 'imagen/';
@@ -30,17 +26,11 @@ class MisVisController extends Controller
             $MisVis['image'] = "$nombreI";
         }
 
+        //MisVis::create($request->all());
         MisVis::create($MisVis);
         return redirect()->to('/MisVis');
 
     }
-
-
-
-
-
-
-
 
     public function edit(){
         return view('Admin.MisVis.edit');
