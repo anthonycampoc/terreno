@@ -37,6 +37,12 @@ Route::get('/statuService/{id}', [ServicioController::class, 'status']);
 Route::get('/MisVis',[MisVisController::class, 'index']);
 Route::get('/EditMisVis', [MisVisController::class, 'edit']);
 
-//Rutes redes
+//Rutas redes
 Route::get('/redes', [RedesController::class, 'index']);
+Route::get('/createRed', [RedesController::class, 'create']);
+Route::post('/storeRed', [RedesController::class, 'store']);
+Route::get('/editRed/{id}', [RedesController::class,'edit']);
+Route::put('/updateRed', [RedesController::class,'update']);
+Route::get('/statusRed/{id}', [RedesController::class,'status']);
+Route::get('/redesd', [RedesController::class, 'indexD']);
 
