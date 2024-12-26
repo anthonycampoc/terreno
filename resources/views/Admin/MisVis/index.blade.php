@@ -9,7 +9,6 @@
       <h1 class="h2">Listado de Mision y Vision</h1>
       <div class="btn-toolbar mb-2 mb-md-0">
         <div class="btn-group me-2">
-      
               <a class="btn btn-outline-success" href="/createMisVis">Ingresar</a>
               <a class="btn btn-outline-danger" href="/redesd">Desactivados</a>
         </div>
@@ -25,11 +24,14 @@
             </tr>
           </thead>
           <tbody>
+            @foreach ($MisVis as $item)
             <tr>
-              <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa quisquam recusandae temporibus fugiat quibusdam nobis harum facilis. Iusto laborum odio dolores optio dolore dicta, itaque culpa maxime animi rerum minus!</td>
-              <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur tempore vero natus aperiam at quasi veniam excepturi dicta? Quod eaque amet suscipit numquam, voluptatibus fugit cum omnis rerum deleniti earum?</td>
-              <td><a class="btn btn-outline-success" href="/EditMisVis">Actualizar</a></td>
+              <td>{{$item->name}}</td>
+              <td><img style="width:100px; height:100px; " src="{{asset('imagen/'.$item->image)}}" alt=""></td>
+              <td><a class="btn btn-outline-success" href="/editMisVis/{{$item->id}}">Actualizar</a></td>
+              <td><a class="btn btn-outline-danger" href="/statusMisVis/{{$item->id}}">Desactivar</a></td>
             </tr>
+            @endforeach
           </tbody>
         </table>
       </div>

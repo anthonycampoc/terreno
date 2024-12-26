@@ -1,39 +1,34 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="container">
-        <hr class="featurette-divider">
-        <h2 class="text-center">Actualizar Mision y Vision</h2>
-    
-        <form class="row g-3 needs-validation" novalidate>
-  
-            <div class="col-md-12 position-relative">
-              <label for="mision" class="form-label">Mision</label>
-              <textarea class="form-control" id="mision" name="mision" ></textarea>
-            </div>
-            <div class="col-md-12 position-relative">
-                <label for="imgMision" class="form-label">Mision Imagen</label>
-                <input type="file" class="form-control" id="imgMision" name="imgMision" required>
-              </div>
-            
-            <div class="col-md-12 position-relative">
-                <label for="vision" class="form-label">Vision</label>
-                <textarea class="form-control" id="vision" name="vision" ></textarea>
-              </div>
+<div class="container">
+    <hr class="featurette-divider">
+    <h2 class="text-center">Ingresar Mision y Vision</h2>
+    <form action="/updateMisVis/{{$MisVis->image}}" method="POST" class="row g-3 needs-validation" enctype="multipart/form-data">
+      @csrf
+      @method('PUT')
+      
+      <input type="hidden" name="id" value="{{$MisVis->id}}">
+        <div class="col-md-12 position-relative">
+            <label for="name" class="form-label">Nombre</label>
+            <textarea  class="form-control" name="name" id="name">{{$MisVis->name}}</textarea>
+        </div>
 
-              <div class="col-md-12 position-relative">
-                <label for="imgVision" class="form-label">Vision Imagen</label>
-                <input type="file" class="form-control" id="imgVision" name="imgVision" required>
-              </div>
-      
-    
-      
-    
-         
-    
-            <div class="col-12">
-              <button class="btn btn-outline-success" type="submit">Actualizar</button>
-            </div>
-          </form>
-    </div>
+        <div class="col-md-12 position-relative">
+            <label for="image" class="form-label">Imagen</label>
+            <input type="file" class="form-control" id="image" name="image">
+        </div>
+
+        <div class="col-md-12">
+            <figure class="figure">
+                <img src="{{asset('imagen/'.$MisVis->image)}}" class="figure-img img-fluid rounded" alt="...">
+            </figure>
+        </div>
+
+        <div class="col-12">
+          <button class="btn btn-outline-success" type="submit">Actualizar</button>
+        </div>
+      </form>
+</div>
+   
 @endsection
