@@ -21,9 +21,16 @@ class MisVisController extends Controller
 
     public function store(Request $request){
 
-        dd($request);
+        $MisVis = $request->all();//almancena los datos que se mandan desde el fomulario html
+        
+        if($imagen = $request->file('image')){
+            $ruta = 'imagen/';
+            $nombreI = date('YmdHis').".".$imagen->getClientOriginalExtension();
+            $imagen->move($ruta,$nombreI);
+            $MisVis['image'] = "$nombreI";
+        }
 
-        MisVis::create($request->all());
+        MisVis::create($MisVis);
         return redirect()->to('/MisVis');
 
     }
