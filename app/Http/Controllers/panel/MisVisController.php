@@ -10,7 +10,7 @@ use Whoops\Util\Misc;
 class MisVisController extends Controller
 {
     public function index(){
-        $MisVis = MisVis::all();
+        $MisVis = MisVis::where('status','activo')->get();
         return view('Admin.MisVis.index', compact('MisVis'));
     }
 
@@ -58,5 +58,22 @@ class MisVisController extends Controller
         $MisVis->update($datos);
         return redirect()->to('/MisVis');
 
+    }
+
+    public function status($id){
+        $estado= MisVis::find($id);
+
+        if($estado->status == "activo"){
+            MisVis::where('id', $id)->update(['status' => "desactivo"]);
+        }else{
+            MisVis::where('id', $id)->update(['status' => "activo"]);
+        }
+
+        return redirect()->to('/MisVis');
+    }
+
+    public function indexD(){
+        $MisVis = MisVis::where('status','desactivo')->get();
+        return view('Admin.MisVis.indexD', compact('MisVis'));
     }
 }

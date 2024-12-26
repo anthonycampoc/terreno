@@ -49,7 +49,8 @@ Route::get('/createMisVis', [MisVisController::class, 'create']);
 Route::post('/storeMisVis', [MisVisController::class, 'store']);
 Route::get('/editMisVis/{id}', [MisVisController::class, 'edit']);
 Route::put('/updateMisVis/{imagen}', [MisVisController::class, 'update']);
-
+Route::get('/statusMisVis/{id}', [MisVisController::class, 'status']);
+Route::get('/MisVisD',[MisVisController::class, 'indexD']);
 
 
 

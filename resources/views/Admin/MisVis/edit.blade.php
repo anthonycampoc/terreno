@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <hr class="featurette-divider">
-    <h2 class="text-center">Ingresar Mision y Vision</h2>
+    <h2 class="text-center">Actualizar Mision y Vision</h2>
     <form action="/updateMisVis/{{$MisVis->image}}" method="POST" class="row g-3 needs-validation" enctype="multipart/form-data">
       @csrf
       @method('PUT')
