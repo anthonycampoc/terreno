@@ -32,10 +32,47 @@ Route::get('/editService/{id}', [ServicioController::class, 'edit']);
 Route::put('/updateService/{id}', [ServicioController::class, 'update']);
 Route::get('/statuService/{id}', [ServicioController::class, 'status']);
 
+
+
+
+
+
+
+
+
+
+
 //Ruta Mision y Vision
 
 Route::get('/MisVis',[MisVisController::class, 'index']);
+Route::get('/createMisVis', [MisVisController::class, 'create']);
+Route::post('/storeMisVis', [MisVisController::class, 'store']);
+
+
+
 Route::get('/EditMisVis', [MisVisController::class, 'edit']);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //Rutas redes
 Route::get('/redes', [RedesController::class, 'index']);

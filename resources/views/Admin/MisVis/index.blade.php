@@ -6,9 +6,15 @@
 
 
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Listado de Mision y Vision</h1>
-   
+      <h1 class="h2">Listado de Mision y Vision</h1>
+      <div class="btn-toolbar mb-2 mb-md-0">
+        <div class="btn-group me-2">
+      
+              <a class="btn btn-outline-success" href="/createMisVis">Ingresar</a>
+              <a class="btn btn-outline-danger" href="/redesd">Desactivados</a>
+        </div>
       </div>
+    </div>
     <div class="table-responsive">
         <table class="table table-striped table-sm">
           <thead>
