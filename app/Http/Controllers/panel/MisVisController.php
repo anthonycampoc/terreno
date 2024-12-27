@@ -39,7 +39,7 @@ class MisVisController extends Controller
         return view('Admin.MisVis.edit', compact('MisVis'));
     }
 
-    public function update(Request $request, MisVis $MisVis,$img){
+    public function update(Request $request, MisVis $MisVis, $img){
         
         //dd($imagen);
         $datos = $request->all();//almancena los datos que se mandan desde el fomulario html

@@ -81,12 +81,12 @@
           <div class="row featurette">
             <div class="col-md-7">
               <h2 class="featurette-heading">Mision</h2>
-              <p class="lead">{{$Mision}}</p>
+              <p class="lead text-justify">{{$Mision->name}}</p>
             </div>
             <div class="col-md-5">
 
               <figure class="figure">
-                <img src="{{asset('imagen/'.$imgMision)}}" class="figure-img img-fluid rounded" alt="...">
+                <img src="{{asset('imagen/'.$Mision->image)}}" class="figure-img img-fluid rounded" alt="...">
               </figure>
             </div>
           </div>
@@ -96,12 +96,12 @@
           <div class="row featurette">
             <div class="col-md-7 order-md-2">
               <h2 class="featurette-heading">Vision</h2>
-              <p class="lead">{{$Vision}}</p>
+              <p class="lead">{{$Vision->name}}</p>
             </div>
             <div class="col-md-5 order-md-1">
               
               <figure class="figure">
-                <img src="{{asset('imagen/'.$imgVision)}}" class="figure-img img-fluid rounded" alt="...">
+                <img src="{{asset('imagen/'.$Vision->image)}}" class="figure-img img-fluid rounded" alt="...">
               </figure>
             </div>
           </div>

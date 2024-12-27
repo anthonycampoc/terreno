@@ -12,27 +12,14 @@ class PaginaController extends Controller
     public function index(){
         $servicios = Service::where('status','activo')->get();
         $redes = Red::where('status','activo')->get();
-        $Mision2 = MisVis::where('status', 'activo')->where('id', 1) ->get();
-        $Vision2 = MisVis::where('status', 'activo')->where('id', 2) ->get();
-
-        foreach($Mision2 as $item){
-              $Mision = $item['name'];
-              $imgMision = $item['image'];
-        }
-        
-        foreach($Vision2 as $item){
-            $Vision= $item['name'];
-            $imgVision = $item['image'];
-        
-        }
-
-
-        return view('layouts.index', compact('servicios',
+        $Mision = MisVis::where('status', 'activo')->where('id', 1)->first();
+        $Vision = MisVis::where('status', 'activo')->where('id', 2)->first();
+    
+        return view('layouts.index', compact(
+        'servicios',
         'redes', 
         'Mision', 
-        'Vision',
-        'imgVision',
-        'imgMision'
+        'Vision'
     ));
     }
 
