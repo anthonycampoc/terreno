@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Card;
+use App\Models\empresa;
+use App\Models\Inicio;
 use App\Models\MisVis;
 use App\Models\Red;
+use App\Models\SEO;
 use App\Models\Service;
 use Illuminate\Http\Request;
 
@@ -14,13 +18,29 @@ class PaginaController extends Controller
         $redes = Red::where('status','activo')->get();
         $Mision = MisVis::where('status', 'activo')->where('id', 1)->first();
         $Vision = MisVis::where('status', 'activo')->where('id', 2)->first();
-    
-        return view('layouts.index', compact(
+        $empresa = empresa::where('id', 1)->first();
+        $inicio = Inicio::where('status','activo')->get();
+        $card = Card::where('id','1')->first();
+        $seo = SEO::where('id','1')->first();
+        $statusCard= $card->status;
+       // dd($statusCard);
+        return view('paginaWeb.pagina', compact(
         'servicios',
         'redes', 
         'Mision', 
-        'Vision'
+        'Vision',
+        'empresa',
+        'inicio',
+        'statusCard',
+        'card',
+        'seo'
     ));
+    }
+
+    public function redirect(){
+        $redes = Red::where('status','activo')->get();
+        $empresa = empresa::where('id', 1)->first();
+        return view('paginaWeb.404', compact('redes','empresa'));
     }
 
 }

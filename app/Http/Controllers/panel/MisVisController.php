@@ -14,26 +14,6 @@ class MisVisController extends Controller
         return view('Admin.MisVis.index', compact('MisVis'));
     }
 
-    public function create(){
-        return view('Admin.MisVis.create');
-    }
-    public function store(Request $request){
-
-       $MisVis = $request->all();//almancena los datos que se mandan desde el fomulario html
-        
-        if($imagen = $request->file('image')){
-            $ruta = 'imagen/';
-            $nombreI = date('YmdHis').".".$imagen->getClientOriginalExtension();
-            $imagen->move($ruta,$nombreI);
-            $MisVis['image'] = "$nombreI";
-        }
-
-        //MisVis::create($request->all());
-        MisVis::create($MisVis);
-        return redirect()->to('/MisVis');
-
-    }
-
     public function edit($id){
         $MisVis = MisVis::find($id);
         return view('Admin.MisVis.edit', compact('MisVis'));
@@ -60,20 +40,5 @@ class MisVisController extends Controller
 
     }
 
-    public function status($id){
-        $estado= MisVis::find($id);
-
-        if($estado->status == "activo"){
-            MisVis::where('id', $id)->update(['status' => "desactivo"]);
-        }else{
-            MisVis::where('id', $id)->update(['status' => "activo"]);
-        }
-
-        return redirect()->to('/MisVis');
-    }
-
-    public function indexD(){
-        $MisVis = MisVis::where('status','desactivo')->get();
-        return view('Admin.MisVis.indexD', compact('MisVis'));
-    }
+  
 }
